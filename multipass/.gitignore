@@ -1,0 +1,4 @@
+node_modules/
+package-lock.json
+/multipass.ps1
+/report.csv
