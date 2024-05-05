@@ -1,0 +1,24 @@
+variables:
+  PROJECT_NAME: "PowerLine"
+  GIT_SSL_NO_VERIFY: "1"
+  GIT_SUBMODULE_STRATEGY: recursive
+
+before_script:
+  - echo "starting build for %PROJECT_NAME%"
+stages:
+  - build
+build:
+  stage: build
+  tags:
+    - win10
+    - cs
+  script:
+  - echo "Building the builder for .NET 2.0..."
+  - C:\Windows\Microsoft.NET\Framework64\v2.0.50727\msbuild.exe /t:rebuild /p:Configuration=Release /p:Platform=x64 "PowerLine/PowerLineWin7.pln.sln"
+  - echo "Building the builder for .NET 4.0..."
+  - C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe /t:rebuild /p:Configuration=Release /p:Platform=x64 "PowerLine/PowerLineWin10.pln.sln"
+  - echo "Building powerline.exe ... with .NET 2.0 Builder"
+  - cd PowerLine
+  - '.\PLBuilder.exe'
+  artifacts:
+    untracked: true

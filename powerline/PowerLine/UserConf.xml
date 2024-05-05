@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project>
+  <!-- x86, x64, or Both -->
+  <Architecture> x64 </Architecture>
+  
+  <Scripts>
+    <!-- Full URLS pointing to PowerShell Scripts on Github, Bitbucket, Your Server, Wherever -->
+
+	<Remote>https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Exfiltration/Out-Minidump.ps1</Remote>
+
+	<!-- Fully Qualified Path to Your Local Scripts -->
+    <Local>..\PowerShell\Credential Access\mimileo\mimileo.ps1</Local>
+    <Local>..\PowerShell\redvoteamhelpers\Credential_Access\dockerpass\dockerpass.ps1</Local>
+  
+  </Scripts>
+  
+</Project>
+
